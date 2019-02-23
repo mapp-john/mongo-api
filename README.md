@@ -17,7 +17,7 @@
 ## Collections are created automatically if they don't exist
 
 ### To post to a collection:
-#### POST: https://container.domain.com/api/v1.0/<collection>
+#### POST: https://container.domain.com/api/v1.0/TEST_COLLECTION
 ```json
 {
   "type": "type_a",
