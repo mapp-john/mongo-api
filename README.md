@@ -14,7 +14,7 @@
 }
 ```
 
-## Collections are created automatically if they don't exist
+*Collections are created automatically if they don't exist*
 
 ### Post single item to a collection:
 #### POST: https://container.domain.com/api/v1.0/TEST_COLLECTION
@@ -122,8 +122,10 @@
   ]
 }
 ```
+
+
 ### Update single item by ID:
-#### *Must provide ID in Post Data*
+*Must provide ID in Post Data*
 #### PATCH: https://container.domain.com/api/v1.0/TEST_COLLECTION
 ```json
 {
@@ -137,9 +139,11 @@
   "RESULT": "Object updated"
 }
 ```
+
+
 ### Replace single item by ID:
-#### *Must provide ID in Post Data*
-#### *All data in item will be replaced with data sent*
+*Must provide ID in Post Data*
+*All data in item will be replaced with data sent*
 #### PATCH: https://container.domain.com/api/v1.0/TEST_COLLECTION
 ```json
 {
