@@ -14,9 +14,9 @@
 }
 ```
 
-*Collections are created automatically if they don't exist*
 
 ### Post single item to a collection:
+*Collections are created automatically if they don't exist*
 #### POST: https://container.domain.com/api/v1.0/TEST_COLLECTION
 ```json
 {
