@@ -190,8 +190,8 @@ def base(collection):
 
         # Return
         return jsonify(result), 201
-    # REPLACE EXISTING ITEMS
 
+    # REPLACE EXISTING ITEMS
     elif request.method == 'PUT':
         # Pull JSON from HTTP Request
         JSON = request.json
