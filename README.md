@@ -16,7 +16,7 @@
 
 ## Collections are created automatically if they don't exist
 
-### To post to a collection:
+### Post single item to a collection:
 #### POST: https://container.domain.com/api/v1.0/TEST_COLLECTION
 ```json
 {
@@ -31,8 +31,10 @@
    "acknowledged": true
 }
 ```
+**_id** = *ID of item created*
 
-### To ALL data from collection
+
+### Retrieve ALL data from collection:
 #### GET https://container.domain.com/api/v1.0/TEST_COLLECTION
 #### RESPONSE:
 ```json
@@ -50,7 +52,7 @@
 ]
 ```
 
-### To specific data from collection
+### Retrieve specific data from collection by key:
 #### GET https://container.domain.com/api/v1.0/TEST_COLLECTION?type=type_a
 #### RESPONSE:
 ```json
@@ -63,7 +65,7 @@
 ]
 ```
 
-### To specific data from collection by ID
+### Retrieve specific data from collection by ID:
 #### GET https://container.domain.com/api/v1.0/TEST_COLLECTION?_id=5c71d7fc39fe6b0021441353
 #### RESPONSE:
 ```json
@@ -76,7 +78,7 @@
 ]
 ```
 
-### To Delete specific ITEM
+### Delete specific item by ID:
 #### DELETE  https://container.domain.com/api/v1.0/TEST_COLLECTION?_id=5c71d7fc39fe6b0021441353
 #### RESPONSE:
 ```json
@@ -85,9 +87,9 @@
   "ok": 1
 }
 ```
-n = number of items modified (in this case deleted)
+**n** = *number of items modified (in this case deleted)*
 
-### To Delete specific entire collection
+### Delete specific entire collection:
 #### DELETE  https://container.domain.com/api/v1.0/collections?collection=TEST_COLLECTION
 #### RESPONSE:
 ```json
@@ -96,4 +98,61 @@ n = number of items modified (in this case deleted)
 }
 ```
 
+### Bulk item creation:
+#### POST: https://container.domain.com/api/v1.0/TEST_COLLECTION/bulk
+```json
+[
+  {
+    "type": "type_a",
+    "version": "version_1"
+  },
+  {
+    "type": "type_b",
+    "version": "version_2"
+  }
+]
+```
+#### RESPONSE: 
+```json
+{
+  "acknowledged": true,
+  "inserted_ids":    [
+    {"_id": "5c72292f39fe6b0021441354"},
+    {"_id": "5c72292f39fe6b0021441355"}
+  ]
+}
+```
+### Update single item by ID:
+#### *Must provide ID in Post Data*
+#### PATCH: https://container.domain.com/api/v1.0/TEST_COLLECTION
+```json
+{
+  "_id":"5c72292f39fe6b0021441354",
+  "version": "version_1.5"
+}
+```
+#### RESPONSE: 
+```json
+{
+  "RESULT": "Object updated"
+}
+```
+### Replace single item by ID:
+#### *Must provide ID in Post Data*
+#### *All data in item will be replaced with data sent*
+#### PATCH: https://container.domain.com/api/v1.0/TEST_COLLECTION
+```json
+{
+  "_id":"5c72292f39fe6b0021441354",
+  "type": "type_a",
+  "version": "version_1.5",
+  "status": "down"
+}
+```
+#### RESPONSE: 
+```json
+{
+  "RESULT": "Object updated"
+}
+```
 
