@@ -1,7 +1,7 @@
 # mongo-api
 ## HTTP API front end for Mongo DB
 
-### To get all collections:
+## Get all collections:
 #### GET: https://container.domain.com/api/v1.0/collections
 #### RESPONSE: 
 ```json
@@ -15,7 +15,8 @@
 ```
 
 
-### Post single item to a collection:
+
+## Post single item to a collection:
 *Collections are created automatically if they don't exist*
 #### POST: https://container.domain.com/api/v1.0/TEST_COLLECTION
 ```json
@@ -34,7 +35,8 @@
 **_id** = *ID of item created*
 
 
-### Retrieve ALL data from collection:
+
+## Retrieve ALL data from collection:
 #### GET https://container.domain.com/api/v1.0/TEST_COLLECTION
 #### RESPONSE:
 ```json
@@ -52,7 +54,9 @@
 ]
 ```
 
-### Retrieve specific data from collection by key:
+
+
+## Retrieve specific data from collection by key:
 #### GET https://container.domain.com/api/v1.0/TEST_COLLECTION?type=type_a
 #### RESPONSE:
 ```json
@@ -65,7 +69,9 @@
 ]
 ```
 
-### Retrieve specific data from collection by ID:
+
+
+## Retrieve specific data from collection by ID:
 #### GET https://container.domain.com/api/v1.0/TEST_COLLECTION?_id=5c71d7fc39fe6b0021441353
 #### RESPONSE:
 ```json
@@ -78,7 +84,9 @@
 ]
 ```
 
-### Delete specific item by ID:
+
+
+## Delete specific item by ID:
 #### DELETE  https://container.domain.com/api/v1.0/TEST_COLLECTION?_id=5c71d7fc39fe6b0021441353
 #### RESPONSE:
 ```json
@@ -89,7 +97,9 @@
 ```
 **n** = *number of items modified (in this case deleted)*
 
-### Delete specific entire collection:
+
+
+## Delete specific entire collection:
 #### DELETE  https://container.domain.com/api/v1.0/collections?collection=TEST_COLLECTION
 #### RESPONSE:
 ```json
@@ -98,7 +108,9 @@
 }
 ```
 
-### Bulk item creation:
+
+
+## Bulk item creation:
 #### POST: https://container.domain.com/api/v1.0/TEST_COLLECTION/bulk
 ```json
 [
@@ -124,7 +136,8 @@
 ```
 
 
-### Update single item by ID:
+
+## Update single item by ID:
 *Must provide ID in Post Data*
 #### PATCH: https://container.domain.com/api/v1.0/TEST_COLLECTION
 ```json
@@ -141,7 +154,8 @@
 ```
 
 
-### Replace single item by ID:
+
+## Replace single item by ID:
 *Must provide ID in Post Data*
 *All data in item will be replaced with data sent*
 #### PATCH: https://container.domain.com/api/v1.0/TEST_COLLECTION
@@ -159,4 +173,3 @@
   "RESULT": "Object updated"
 }
 ```
-
