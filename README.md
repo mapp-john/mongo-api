@@ -158,7 +158,7 @@
 ## Replace single item by ID:
 *Must provide ID in Post Data*
 *All data in item will be replaced with data sent*
-#### PATCH: https://container.domain.com/api/v1.0/TEST_COLLECTION
+#### PUT: https://container.domain.com/api/v1.0/TEST_COLLECTION
 ```json
 {
   "_id":"5c72292f39fe6b0021441354",
